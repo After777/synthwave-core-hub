@@ -76,19 +76,27 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Theme Toggle */}
-          <div className="hidden md:block">
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
-          </div>
+            
+            {/* Terms & Conditions Button */}
+            <button
+              onClick={() => setTermsOpen(true)}
+              className="px-6 py-2.5 rounded-2xl bg-black text-white font-bold text-xs shadow-[0_0_20px_hsl(var(--primary)/0.6)] hover:shadow-[0_0_35px_hsl(var(--primary)/0.9)] transition-all duration-500 uppercase tracking-[0.15em] border-2 border-primary/40 hover:border-primary/60 hover:scale-105"
+            >
+              Terms & Conditions
+            </button>
 
-          {/* CTA Button */}
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="hidden md:block px-8 py-3 rounded-xl bg-gradient-to-r from-primary via-accent to-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white font-bold text-sm shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.8)] hover:scale-105 transition-all duration-500 uppercase tracking-[0.2em] border border-primary/30 relative overflow-hidden group"
-          >
-            <span className="relative z-10">Get Started</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-          </button>
+            {/* CTA Button */}
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="px-8 py-3 rounded-2xl bg-gradient-to-r from-primary via-accent to-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white font-bold text-sm shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.8)] hover:scale-105 transition-all duration-500 uppercase tracking-[0.2em] border-2 border-primary/30 relative overflow-hidden group"
+            >
+              <span className="relative z-10">Get Started</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+            </button>
+          </div>
 
           {/* Mobile Menu */}
           <div className="md:hidden flex items-center gap-3">
@@ -142,7 +150,7 @@ const Navbar = () => {
                       setTermsOpen(true);
                       setMobileMenuOpen(false);
                     }}
-                    className="mt-8 px-6 py-3 rounded-xl bg-black text-white font-bold text-sm shadow-[0_0_20px_hsl(var(--primary)/0.6)] hover:shadow-[0_0_35px_hsl(var(--primary)/0.9)] transition-all duration-500 uppercase tracking-[0.15em] border border-primary/40"
+                    className="mt-8 px-6 py-3 rounded-2xl bg-black text-white font-bold text-sm shadow-[0_0_20px_hsl(var(--primary)/0.6)] hover:shadow-[0_0_35px_hsl(var(--primary)/0.9)] transition-all duration-500 uppercase tracking-[0.15em] border-2 border-primary/40"
                   >
                     Important – Terms & Conditions
                   </button>
@@ -150,7 +158,7 @@ const Navbar = () => {
                   {/* Mobile CTA */}
                   <button
                     onClick={() => scrollToSection("contact")}
-                    className="mt-auto mb-8 px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-bold text-sm shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.8)] transition-all duration-500 uppercase tracking-[0.2em]"
+                    className="mt-auto mb-8 px-8 py-4 rounded-2xl bg-gradient-to-r from-primary to-accent text-white font-bold text-sm shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.8)] transition-all duration-500 uppercase tracking-[0.2em] border-2 border-primary/20"
                   >
                     Get Started
                   </button>
@@ -163,7 +171,7 @@ const Navbar = () => {
 
       {/* Terms & Conditions Dialog */}
       <Dialog open={termsOpen} onOpenChange={setTermsOpen}>
-        <DialogContent className="max-w-3xl max-h-[85vh] bg-black border-2 border-primary/40 shadow-[0_0_50px_hsl(var(--primary)/0.5)]">
+        <DialogContent className="max-w-3xl max-h-[85vh] bg-black border-2 border-primary/40 shadow-[0_0_50px_hsl(var(--primary)/0.5)] rounded-3xl">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-primary">Terms & Conditions</span>
