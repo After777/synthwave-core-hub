@@ -26,6 +26,10 @@ const About = () => {
               <p className="text-xl text-foreground font-semibold leading-relaxed">
                 We are a new development Agency we make sure provide 100%
               </p>
+              
+              <p className="text-base text-foreground/90 leading-relaxed">
+                At Our Services, we focus on delivering high-quality websites using the best technology available. We help gyms, small brands, and local shops create a strong online presence that looks great and performs even better. Our goal is to make your business stand out with a professional, secure, and easy-to-manage website. We're proud to be 100% trusted by our clients and committed to providing real value with every project we take on.
+              </p>
             </div>
 
             {/* Stats */}
