@@ -43,7 +43,10 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Rav Labs"
-              className="h-10 w-auto transition-all duration-300 group-hover:scale-105 opacity-90 group-hover:opacity-100 drop-shadow-[0_0_8px_rgba(59,130,246,0.3)] group-hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.6)]"
+              className="h-10 w-auto transition-all duration-500 group-hover:scale-105 opacity-70 group-hover:opacity-100 brightness-90 group-hover:brightness-110 saturate-90 group-hover:saturate-100"
+              style={{
+                filter: 'drop-shadow(0 0 4px rgba(59, 130, 246, 0.2))',
+              }}
             />
           </button>
 
