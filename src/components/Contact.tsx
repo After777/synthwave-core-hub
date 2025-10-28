@@ -112,6 +112,8 @@ const Contact = () => {
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <a 
                       href="mailto:contactravlabs@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold text-sm shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)] hover:-translate-y-0.5 transition-all duration-300"
                     >
                       Email Us
