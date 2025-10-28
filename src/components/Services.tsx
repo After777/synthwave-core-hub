@@ -6,22 +6,22 @@ const services = [
   {
     icon: Monitor,
     title: "Website Design & Development",
-    description: "Modern, fast, and scalable websites tailored for your brand.",
+    description: "We craft websites that don't just look good — they perform. Our focus is on creating premium, modern designs that engage users and deliver results. Every project is built to be fast, responsive, and aligned with your brand's identity. From sleek visuals to flawless functionality, we make sure your digital presence feels bold, professional, and future-ready.",
   },
   {
     icon: Palette,
-    title: "Brand Identity & UI/UX",
-    description: "Creative designs that connect and convert.",
+    title: "Brand Identity & UI/UX Design",
+    description: "Your brand deserves more than just a logo — it needs a story. We design powerful brand identities that reflect your vision, personality, and purpose. From logo design to complete visual systems, we help your brand stand out and connect deeply with your audience. Note: Brand identity and logo creation are billed separately from web development.",
   },
   {
     icon: Settings,
     title: "Hosting & Maintenance",
-    description: "Seamless performance with zero downtime.",
+    description: "We take care of everything that keeps your website running perfectly — hosting, security, updates, and performance checks. These services are fully managed under our maintenance plan, so you don't have to worry about extra charges or downtime. Your site stays secure, stable, and optimized at all times.",
   },
   {
     icon: TrendingUp,
     title: "SEO & Optimization",
-    description: "Rank higher. Load faster. Grow stronger.",
+    description: "We ensure your website gets noticed. Our SEO process focuses on visibility, speed, and ranking — helping you reach the right audience faster. From keyword optimization to site performance and analytics, we make sure your site not only looks good but performs like a pro in search results.",
   },
 ];
 
@@ -55,11 +55,11 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="glass-effect-strong rounded-2xl p-8 hover-lift hover-glow group animate-fade-in relative overflow-hidden"
+              className="glass-effect-strong rounded-2xl p-10 hover-lift hover-glow group animate-fade-in relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Background Gradient on Hover */}
@@ -70,9 +70,9 @@ const Services = () => {
                   <service.icon className="w-8 h-8 text-primary" />
                 </div>
                 
-                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300 hover-glow-text">{service.title}</h3>
+                <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300 hover-glow-text">{service.title}</h3>
                 
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                <p className="text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
               </div>

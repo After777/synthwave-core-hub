@@ -191,7 +191,34 @@ All colors MUST be HSL.
     text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
   }
 
+  .futuristic-nav-link {
+    animation: fadeIn 0.6s ease-out backwards;
+  }
+
+  .bg-size-200 {
+    background-size: 200% 100%;
+  }
+
+  .bg-pos-0 {
+    background-position: 0% 50%;
+  }
+
+  .bg-pos-100 {
+    background-position: 100% 50%;
+  }
+
   /* Professional Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   @keyframes float {
     0%, 100% { transform: translateY(0px) translateX(0px); }
     25% { transform: translateY(-10px) translateX(10px); }

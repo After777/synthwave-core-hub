@@ -51,15 +51,19 @@ const Navbar = () => {
           </button>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+          <div className="hidden md:flex items-center gap-10">
+            {navLinks.map((link, index) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="relative text-sm font-semibold text-foreground/80 hover:text-primary transition-colors duration-300 group uppercase tracking-wider"
+                className="relative text-sm font-bold text-foreground/70 hover:text-primary transition-all duration-500 group uppercase tracking-[0.15em] futuristic-nav-link"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
+                <span className="relative z-10">{link.label}</span>
+                {/* Neon underline glow */}
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-primary via-accent to-primary group-hover:w-full transition-all duration-500 shadow-[0_0_8px_hsl(var(--primary))]"></span>
+                {/* Subtle background glow on hover */}
+                <span className="absolute inset-0 -z-10 bg-primary/5 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-0 group-hover:scale-150"></span>
               </button>
             ))}
           </div>
@@ -67,9 +71,10 @@ const Navbar = () => {
           {/* CTA Button */}
           <button
             onClick={() => scrollToSection("contact")}
-            className="hidden md:block px-6 py-2.5 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold text-sm shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)] hover:-translate-y-0.5 transition-all duration-300 uppercase tracking-wide"
+            className="hidden md:block px-8 py-3 rounded-xl bg-gradient-to-r from-primary via-accent to-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white font-bold text-sm shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.8)] hover:scale-105 transition-all duration-500 uppercase tracking-[0.2em] border border-primary/30 relative overflow-hidden group"
           >
-            Get Started
+            <span className="relative z-10">Get Started</span>
+            <span className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
           </button>
 
           {/* Mobile Menu Button */}
