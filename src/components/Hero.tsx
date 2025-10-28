@@ -40,35 +40,58 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 z-10 text-center">
-        <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 glow-text">
-            We Build Websites
+      <div className="container mx-auto container-padding z-10 text-center">
+        <div className="animate-fade-in max-w-5xl mx-auto">
+          <div className="inline-block px-4 py-2 rounded-full glass-effect mb-8 text-sm font-medium text-primary">
+            ✨ Professional Web Development
+          </div>
+          
+          <h1 className="heading-primary font-black mb-6 glow-text text-balance">
+            Build Your Digital
             <br />
-            <span className="text-primary">That Build Brands.</span>
+            <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-gradient">
+              Presence Today
+            </span>
           </h1>
           
-          <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto font-light">
-            From concept to launch — Rav Labs crafts digital experiences that elevate your business.
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed text-balance">
+            Transform your business with stunning, high-performance websites crafted by experts. 
+            <span className="text-foreground font-medium"> From concept to launch in weeks, not months.</span>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <Button 
               variant="hero" 
               size="lg"
               onClick={() => scrollToSection('contact')}
-              className="w-full sm:w-auto"
+              className="w-full sm:w-auto text-base font-semibold hover-lift"
             >
-              Get Your Website
+              Start Your Project
             </Button>
             <Button 
               variant="neon" 
               size="lg"
-              onClick={() => scrollToSection('faq')}
-              className="w-full sm:w-auto"
+              onClick={() => scrollToSection('services')}
+              className="w-full sm:w-auto text-base font-semibold"
             >
-              View FAQ
+              Explore Services
             </Button>
+          </div>
+
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-primary"></div>
+              <span>Fast Delivery</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-primary"></div>
+              <span>24/7 Support</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-primary"></div>
+              <span>Affordable Pricing</span>
+            </div>
           </div>
         </div>
 

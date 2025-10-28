@@ -20,29 +20,44 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-12 px-6 relative border-t border-border">
-      <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          {/* Copyright */}
-          <p className="text-muted-foreground text-center md:text-left">
-            © 2025 Rav Labs — Crafted with passion and precision.
-          </p>
-
-          {/* Social Icons */}
-          <div className="flex gap-4">
-            {socialLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 hover:shadow-[0_0_15px_hsl(var(--primary)/0.4)] transition-all duration-300 group"
-                aria-label={link.label}
-              >
-                <link.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform duration-300" />
-              </a>
-            ))}
+    <footer className="py-16 container-padding relative border-t border-border/50 bg-gradient-to-b from-background to-card">
+      <div className="container mx-auto max-w-7xl">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+          {/* Branding */}
+          <div className="text-center md:text-left">
+            <div className="text-2xl font-bold mb-2 glow-text">
+              <span className="text-primary">Rav</span>Labs
+            </div>
+            <p className="text-sm text-muted-foreground max-w-xs">
+              Building digital experiences that elevate businesses. Professional web development, delivered fast.
+            </p>
           </div>
+
+          {/* Social Links */}
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-sm text-muted-foreground font-medium">Connect With Us</p>
+            <div className="flex gap-3">
+              {socialLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-accent/5 flex items-center justify-center hover-lift hover-glow group border border-primary/20"
+                  aria-label={link.label}
+                >
+                  <link.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform duration-300" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-12 pt-8 border-t border-border/30 text-center">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} <span className="font-semibold text-foreground">Rav Labs</span>. All rights reserved. Crafted with excellence.
+          </p>
         </div>
       </div>
     </footer>

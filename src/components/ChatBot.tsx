@@ -35,35 +35,48 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="w-full glass-effect rounded-xl overflow-hidden">
-      <div className="bg-primary text-primary-foreground font-semibold p-3 text-center">
-        💬 Pricing Assistant
+    <div className="w-full glass-effect-strong rounded-2xl overflow-hidden shadow-xl">
+      <div className="bg-gradient-to-r from-primary to-accent p-4 flex items-center gap-3">
+        <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+          <span className="text-xl">💬</span>
+        </div>
+        <div>
+          <div className="font-bold text-white">Pricing Assistant</div>
+          <div className="text-xs text-white/80">Ask me about our plans</div>
+        </div>
       </div>
-      <div className="h-80 overflow-y-auto p-4 space-y-3 text-sm bg-background/50">
+      
+      <div className="h-96 overflow-y-auto p-5 space-y-4 bg-card/30">
         {messages.map((m, i) => (
           <div
             key={i}
-            className={`p-3 rounded-lg max-w-[85%] ${
-              m.from === "bot"
-                ? "bg-muted text-foreground"
-                : "bg-primary text-primary-foreground ml-auto"
-            }`}
+            className={`flex ${m.from === "user" ? "justify-end" : "justify-start"}`}
           >
-            {m.text}
+            <div
+              className={`p-4 rounded-2xl max-w-[85%] shadow-md ${
+                m.from === "bot"
+                  ? "bg-muted text-foreground rounded-tl-sm"
+                  : "bg-gradient-to-r from-primary to-accent text-white rounded-tr-sm"
+              }`}
+            >
+              <p className="text-sm leading-relaxed">{m.text}</p>
+            </div>
           </div>
         ))}
       </div>
-      <div className="flex border-t border-border">
+      
+      <div className="flex border-t border-border/50 bg-card/50">
         <input
-          className="flex-1 p-3 bg-background/50 text-foreground outline-none focus:bg-background"
+          className="flex-1 p-4 bg-transparent text-foreground outline-none placeholder:text-muted-foreground focus:bg-background/30 transition-colors"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={(e) => e.key === "Enter" && handleSend()}
-          placeholder="Ask about our plans..."
+          placeholder="Type your question..."
         />
         <button
           onClick={handleSend}
-          className="bg-primary text-primary-foreground px-6 font-semibold hover:bg-primary/90 transition-colors"
+          className="px-6 font-semibold bg-gradient-to-r from-primary to-accent text-white hover:opacity-90 transition-opacity disabled:opacity-50"
+          disabled={!input.trim()}
         >
           Send
         </button>

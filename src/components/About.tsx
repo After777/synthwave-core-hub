@@ -2,39 +2,70 @@ import aboutGraphic from "@/assets/about-graphic.jpg";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 px-6 relative">
-      {/* Neon Divider */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
+    <section id="about" className="section-spacing container-padding relative">
+      {/* Professional Divider */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
 
-      <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
-          <div className="space-y-6 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold glow-text">
-              Who We <span className="text-primary">Are</span>
-            </h2>
+          <div className="space-y-8 animate-fade-in">
+            <div className="space-y-4">
+              <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">
+                About Us
+              </div>
+              
+              <h2 className="heading-secondary glow-text text-balance">
+                Digital Excellence,
+                <br />
+                <span className="text-primary">Delivered Fast</span>
+              </h2>
+            </div>
             
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Rav Labs is a next-gen creative agency that designs powerful, high-quality websites for growing businesses.
-            </p>
-            
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              We help shops, gyms, and brands go digital with style, speed, and precision.
-            </p>
+            <div className="space-y-4">
+              <p className="text-lg text-foreground/90 leading-relaxed">
+                <span className="font-semibold text-primary">Rav Labs</span> is your partner in digital transformation. 
+                We specialize in creating stunning, high-performance websites that drive real results.
+              </p>
+              
+              <p className="text-base text-muted-foreground leading-relaxed">
+                From small businesses to ambitious startups, we've helped dozens of clients establish 
+                their online presence with style, speed, and precision. Our streamlined process means 
+                you get professional results without the enterprise price tag.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6 pt-4">
+              <div className="space-y-1">
+                <div className="text-3xl font-bold text-primary">100%</div>
+                <div className="text-sm text-muted-foreground">Satisfaction</div>
+              </div>
+              <div className="space-y-1">
+                <div className="text-3xl font-bold text-primary">24/7</div>
+                <div className="text-sm text-muted-foreground">Support</div>
+              </div>
+              <div className="space-y-1">
+                <div className="text-3xl font-bold text-primary">Fast</div>
+                <div className="text-sm text-muted-foreground">Delivery</div>
+              </div>
+            </div>
           </div>
 
           {/* Graphic */}
-          <div className="relative group animate-fade-in">
-            <div className="glass-effect rounded-2xl p-8 hover-glow">
+          <div className="relative group animate-fade-in md:order-last order-first">
+            <div className="glass-effect-strong rounded-3xl p-8 hover-lift">
               <img 
                 src={aboutGraphic} 
-                alt="Rav Labs Technology" 
-                className="w-full h-auto rounded-lg animate-pulse-glow"
+                alt="Rav Labs - Professional Web Development Technology" 
+                className="w-full h-auto rounded-2xl"
               />
             </div>
             
-            {/* Decorative Glow */}
-            <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-3xl -z-10 group-hover:bg-primary/30 transition-all duration-500"></div>
+            {/* Decorative Elements */}
+            <div className="absolute -inset-4 bg-gradient-radial rounded-3xl -z-10 group-hover:scale-105 transition-transform duration-500"></div>
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-accent/20 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute -top-4 -left-4 w-32 h-32 bg-primary/20 rounded-full blur-3xl -z-10"></div>
           </div>
         </div>
       </div>
