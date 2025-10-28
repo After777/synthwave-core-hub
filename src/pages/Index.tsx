@@ -1,3 +1,4 @@
+import ChatBot from "@/components/ChatBot";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
@@ -14,6 +15,7 @@ const Index = () => {
       <FAQ />
       <Contact />
       <Footer />
+      <ChatBot /> {/* 👈 chatbot appears at bottom */}
     </main>
   );
 };
