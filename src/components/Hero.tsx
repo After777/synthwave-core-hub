@@ -64,10 +64,10 @@ const Hero = () => {
             <Button 
               variant="neon" 
               size="lg"
-              onClick={() => scrollToSection('portfolio')}
+              onClick={() => scrollToSection('faq')}
               className="w-full sm:w-auto"
             >
-              View Work
+              View FAQ
             </Button>
           </div>
         </div>
