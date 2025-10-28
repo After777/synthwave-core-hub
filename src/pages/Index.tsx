@@ -15,6 +15,7 @@ const Index = () => {
       <FAQ />
       <Contact />
       <Footer />
+      <ChatBot /> {/* 👈 chatbot appears at bottom */}
     </main>
   );
 };
