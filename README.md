@@ -11,7 +11,7 @@ Next-gen creative agency crafting sleek, high-performance websites for **shops, 
 Core Labs is a next-gen web agency focused on helping small businesses grow with smart, beautiful web design.
 
 ## 🔗 Live Demo
-Visit: [corelabs.site](ravlabs.vercel.apps)a *(replace with your actual domain)*
+Visit: [corelabs.site](ravlabs.vercel.apps)
 
 ## 🛠️ Developer Setup
 ```bash
