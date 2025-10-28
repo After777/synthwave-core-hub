@@ -3,10 +3,13 @@ import { X } from "lucide-react";
 import logo from "@/assets/ravlabs-logo.png";
 import ThemeToggle from "./ThemeToggle";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [termsOpen, setTermsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -133,6 +136,17 @@ const Navbar = () => {
                     ))}
                   </nav>
 
+                  {/* Terms & Conditions Button */}
+                  <button
+                    onClick={() => {
+                      setTermsOpen(true);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="mt-8 px-6 py-3 rounded-xl bg-black text-white font-bold text-sm shadow-[0_0_20px_hsl(var(--primary)/0.6)] hover:shadow-[0_0_35px_hsl(var(--primary)/0.9)] transition-all duration-500 uppercase tracking-[0.15em] border border-primary/40"
+                  >
+                    Important – Terms & Conditions
+                  </button>
+
                   {/* Mobile CTA */}
                   <button
                     onClick={() => scrollToSection("contact")}
@@ -146,6 +160,84 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {/* Terms & Conditions Dialog */}
+      <Dialog open={termsOpen} onOpenChange={setTermsOpen}>
+        <DialogContent className="max-w-3xl max-h-[85vh] bg-black border-2 border-primary/40 shadow-[0_0_50px_hsl(var(--primary)/0.5)]">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <span className="text-primary">Terms & Conditions</span>
+              <span className="text-white/60">— Rav Labs</span>
+            </DialogTitle>
+            <DialogDescription className="text-white/80 text-base">
+              By working with Rav Labs or using our services, you agree to the following terms and conditions.
+            </DialogDescription>
+          </DialogHeader>
+          
+          <ScrollArea className="h-[60vh] pr-4">
+            <div className="space-y-8 text-white/90">
+              {/* Section 1 */}
+              <div className="space-y-3">
+                <h3 className="text-xl font-bold text-primary">1. Monthly Payments</h3>
+                <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
+                  <li>Monthly payments must be completed within 7 days of the due date.</li>
+                  <li>If payment is delayed beyond 7 days, the client's website will be temporarily blocked until payment is cleared.</li>
+                  <li>Continuous delays may result in permanent suspension of hosting or maintenance services.</li>
+                </ul>
+              </div>
+
+              {/* Section 2 */}
+              <div className="space-y-3">
+                <h3 className="text-xl font-bold text-primary">2. Limitation of Liability</h3>
+                <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
+                  <li>Rav Labs will not be held responsible for any indirect, incidental, or consequential damages caused by the use or inability to use the website or related services.</li>
+                  <li>We are not liable for third-party integrations, plugins, or external tools used within a project.</li>
+                  <li>While we may assist with certain third-party tools, responsibility for their performance remains with their respective providers.</li>
+                </ul>
+              </div>
+
+              {/* Section 3 */}
+              <div className="space-y-3">
+                <h3 className="text-xl font-bold text-primary">3. Revisions & Delivery</h3>
+                <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
+                  <li>Each project includes a fixed number of revisions as discussed before the project begins.</li>
+                  <li>Additional revisions beyond that limit will incur extra fees.</li>
+                  <li>Once the final project is approved, Rav Labs is not responsible for further edits or modifications.</li>
+                  <li>Minor post-delivery adjustments may be allowed once or twice as a courtesy, but not beyond that.</li>
+                </ul>
+              </div>
+
+              {/* Section 4 */}
+              <div className="space-y-3">
+                <h3 className="text-xl font-bold text-primary">4. Service Agreement</h3>
+                <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
+                  <li>All projects begin after an initial discussion, quotation, and client approval.</li>
+                  <li>Clients are responsible for providing accurate content, images, and project details.</li>
+                  <li>Any new features or design changes requested after approval will be charged separately.</li>
+                </ul>
+              </div>
+
+              {/* Section 5 */}
+              <div className="space-y-3">
+                <h3 className="text-xl font-bold text-primary">5. Intellectual Property</h3>
+                <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
+                  <li>Upon full payment, ownership of the final website design, content, and assets is transferred to the client.</li>
+                  <li>Rav Labs retains the right to display completed work in its portfolio, social media, and promotional materials as a representation of our work.</li>
+                </ul>
+              </div>
+
+              {/* Section 6 */}
+              <div className="space-y-3">
+                <h3 className="text-xl font-bold text-primary">6. Confidentiality</h3>
+                <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
+                  <li>All client information, project files, and data shared with Rav Labs are treated as strictly confidential.</li>
+                  <li>We do not share, sell, or disclose any client data to third parties without explicit consent.</li>
+                </ul>
+              </div>
+            </div>
+          </ScrollArea>
+        </DialogContent>
+      </Dialog>
     </nav>
   );
 };
