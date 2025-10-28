@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, Instagram } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +14,9 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Simple validation
@@ -22,31 +25,57 @@ const Contact = () => {
       return;
     }
 
-    // Show success message
-    toast.success("Message sent! We'll get back to you soon.");
-    
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+      });
+
+      if (error) throw error;
+
+      // Show success message
+      toast.success("Message sent! We'll get back to you soon.");
+      
+      // Reset form
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+      toast.error("Failed to send message. Please try again or contact us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: Mail,
       label: "Email",
-      value: "contactcorelabs@gmail.com",
-      href: "mailto:contactcorelabs@gmail.com",
+      value: "contactravlabs@gmail.com",
+      href: "mailto:contactravlabs@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 90304 0487",
-      href: "tel:+919030404873",
+      value: "+91 9030440487",
+      href: "tel:+919030440487",
     },
     {
       icon: Instagram,
       label: "Instagram",
-      value: "@corelabs.contact",
-      href: "https://instagram.com/corelabs.contact",
+      value: "@ravlabs.contact",
+      href: "https://instagram.com/ravlabs.contact",
     },
   ];
 
@@ -131,8 +160,9 @@ const Contact = () => {
                 variant="hero" 
                 size="lg" 
                 className="w-full"
+                disabled={isSubmitting}
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </div>

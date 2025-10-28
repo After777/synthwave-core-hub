@@ -15,7 +15,7 @@ const About = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Core Labs is a next-gen creative agency that designs powerful, high-quality websites for growing businesses.
+              Rav Labs is a next-gen creative agency that designs powerful, high-quality websites for growing businesses.
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -28,7 +28,7 @@ const About = () => {
             <div className="glass-effect rounded-2xl p-8 hover-glow">
               <img 
                 src={aboutGraphic} 
-                alt="Core Labs Technology" 
+                alt="Rav Labs Technology" 
                 className="w-full h-auto rounded-lg animate-pulse-glow"
               />
             </div>

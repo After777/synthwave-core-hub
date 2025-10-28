@@ -4,17 +4,17 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Mail,
-      href: "mailto:contactcorelabs@gmail.com",
+      href: "mailto:contactravlabs@gmail.com",
       label: "Email",
     },
     {
       icon: Phone,
-      href: "tel:+919030404873",
+      href: "tel:+919030440487",
       label: "Phone",
     },
     {
       icon: Instagram,
-      href: "https://instagram.com/corelabs.contact",
+      href: "https://instagram.com/ravlabs.contact",
       label: "Instagram",
     },
   ];
@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Copyright */}
           <p className="text-muted-foreground text-center md:text-left">
-            © 2025 Core Labs — Crafted with passion and precision.
+            © 2025 Rav Labs — Crafted with passion and precision.
           </p>
 
           {/* Social Icons */}
