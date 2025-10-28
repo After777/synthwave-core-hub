@@ -43,7 +43,7 @@ const Hero = () => {
       <div className="container mx-auto container-padding z-10 text-center pt-20">
         <div className="animate-hero-entrance max-w-5xl mx-auto">
           <div className="inline-block px-4 py-2 rounded-full glass-effect mb-8 text-sm font-medium text-primary animate-pulse-glow">
-            ✨ Professional Web Development
+            Rav Labs
           </div>
           
           <h1 className="heading-primary font-black mb-6 glow-text text-balance hover-glow-text">

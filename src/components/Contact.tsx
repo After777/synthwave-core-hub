@@ -1,5 +1,4 @@
 import { Mail, Phone, Instagram } from "lucide-react";
-import ChatBot from "@/components/ChatBot";
 
 const Contact = () => {
   const contactInfo = [
@@ -92,9 +91,41 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Pricing Chatbot */}
+          {/* Pricing Information */}
           <div className="animate-fade-in">
-            <ChatBot />
+            <div className="glass-effect-strong rounded-2xl p-8 shadow-xl h-full flex flex-col justify-center">
+              <div className="text-center space-y-6">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                
+                <h3 className="text-2xl font-bold text-primary mb-4">Pricing Information</h3>
+                
+                <p className="text-lg text-foreground/90 leading-relaxed">
+                  To know about pricing, please contact us as given above
+                </p>
+                
+                <div className="pt-6 border-t border-border/30">
+                  <p className="text-sm text-muted-foreground mb-4">Get in touch for a custom quote</p>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <a 
+                      href="mailto:contactravlabs@gmail.com"
+                      className="px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold text-sm shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)] hover:-translate-y-0.5 transition-all duration-300"
+                    >
+                      Email Us
+                    </a>
+                    <a 
+                      href="tel:+919030440487"
+                      className="px-6 py-3 rounded-xl border-2 border-primary/50 bg-card/50 text-foreground font-semibold text-sm hover:border-primary hover:bg-primary/10 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)] transition-all duration-300"
+                    >
+                      Call Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
