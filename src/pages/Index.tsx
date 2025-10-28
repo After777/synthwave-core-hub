@@ -1,13 +1,21 @@
-import ChatBot from "../chatbot";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Services from "@/components/Services";
+import FAQ from "@/components/FAQ";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
-export default function Home() {
+const Index = () => {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-6">Chat with us 💬</h1>
-      <p className="mb-6 text-gray-400 text-center max-w-md">
-        Our AI bot will help you get exact pricing, packages, and setup instantly. 🚀
-      </p>
-      <ChatBot />
-    </div>
+    <main className="min-h-screen">
+      <Hero />
+      <About />
+      <Services />
+      <FAQ />
+      <Contact />
+      <Footer />
+    </main>
   );
-}
+};
+
+export default Index;
