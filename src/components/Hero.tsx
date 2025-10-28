@@ -40,13 +40,13 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto container-padding z-10 text-center">
-        <div className="animate-fade-in max-w-5xl mx-auto">
-          <div className="inline-block px-4 py-2 rounded-full glass-effect mb-8 text-sm font-medium text-primary">
+      <div className="container mx-auto container-padding z-10 text-center pt-20">
+        <div className="animate-hero-entrance max-w-5xl mx-auto">
+          <div className="inline-block px-4 py-2 rounded-full glass-effect mb-8 text-sm font-medium text-primary animate-pulse-glow">
             ✨ Professional Web Development
           </div>
           
-          <h1 className="heading-primary font-black mb-6 glow-text text-balance">
+          <h1 className="heading-primary font-black mb-6 glow-text text-balance hover-glow-text">
             Build Your Digital
             <br />
             <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-gradient">

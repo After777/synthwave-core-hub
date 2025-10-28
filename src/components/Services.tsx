@@ -1,4 +1,6 @@
+import { useRef } from "react";
 import { Monitor, Palette, Settings, TrendingUp } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const services = [
   {
@@ -24,8 +26,15 @@ const services = [
 ];
 
 const Services = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const isVisible = useScrollAnimation(sectionRef);
+
   return (
-    <section id="services" className="section-spacing container-padding relative">
+    <section 
+      id="services" 
+      ref={sectionRef}
+      className={`section-spacing container-padding relative scroll-fade-up ${isVisible ? 'visible' : ''}`}
+    >
       {/* Professional Divider */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
 
@@ -35,7 +44,7 @@ const Services = () => {
             Our Services
           </div>
           
-          <h2 className="heading-secondary glow-text mb-6 text-balance">
+          <h2 className="heading-secondary glow-text mb-6 text-balance hover-glow-text">
             Everything You Need to
             <br />
             <span className="text-primary">Succeed Online</span>
@@ -61,7 +70,7 @@ const Services = () => {
                   <service.icon className="w-8 h-8 text-primary" />
                 </div>
                 
-                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300 hover-glow-text">{service.title}</h3>
                 
                 <p className="text-muted-foreground leading-relaxed text-sm">
                   {service.description}

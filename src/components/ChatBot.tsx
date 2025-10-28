@@ -24,6 +24,15 @@ const ChatBot = () => {
       else if (msg.includes("advanced"))
         reply =
           "⚡ Advanced Plan — ₹3500 + ₹500/month (includes everything in Basic plus advanced features like payment gateway and multiple pages)";
+      else if (msg.includes("price") || msg.includes("cost") || msg.includes("pricing"))
+        reply =
+          "We offer three plans:\n\n📅 Monthly Subscription — ₹2000 + ₹500/month\n🌐 Basic Plan — ₹2000 + ₹500/month\n⚡ Advanced Plan — ₹3500 + ₹500/month\n\nWhich one would you like to know more about?";
+      else if (msg.includes("contact") || msg.includes("email") || msg.includes("phone"))
+        reply =
+          "You can reach us at:\n📧 contactravlabs@gmail.com\n📞 +91 9030440487\n📱 Instagram: @ravlabs.contact";
+      else if (msg.includes("help") || msg.includes("hi") || msg.includes("hello"))
+        reply =
+          "Hello! 👋 I'm here to help you with pricing information. You can ask about:\n• Monthly Subscription\n• Basic Plan\n• Advanced Plan\n• Contact information";
       else
         reply =
           "I can tell you about our Monthly Subscription, Basic Plan, or Advanced Plan! Just type one of them 😊";

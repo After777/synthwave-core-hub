@@ -1,8 +1,17 @@
+import { useRef } from "react";
 import aboutGraphic from "@/assets/about-graphic.jpg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const About = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const isVisible = useScrollAnimation(sectionRef);
+
   return (
-    <section id="about" className="section-spacing container-padding relative">
+    <section 
+      id="about" 
+      ref={sectionRef}
+      className={`section-spacing container-padding relative scroll-fade-up ${isVisible ? 'visible' : ''}`}
+    >
       {/* Professional Divider */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
 
@@ -15,7 +24,7 @@ const About = () => {
                 About Us
               </div>
               
-              <h2 className="heading-secondary glow-text text-balance">
+              <h2 className="heading-secondary glow-text text-balance hover-glow-text">
                 Digital Excellence,
                 <br />
                 <span className="text-primary">Delivered Fast</span>

@@ -138,7 +138,7 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-lg);
   }
 
-  /* Professional Hover States */
+  /* Professional Hover Effects */
   .hover-lift {
     transition: var(--transition-smooth);
   }
@@ -165,6 +165,32 @@ All colors MUST be HSL.
     transform: scale(1.02);
   }
 
+  .hover-glow-text {
+    position: relative;
+    transition: var(--transition-smooth);
+  }
+
+  .hover-glow-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.6);
+    transition: width 0.3s ease;
+  }
+
+  .hover-glow-text:hover::after {
+    width: 100%;
+  }
+
+  .hover-glow-text:hover {
+    color: hsl(var(--primary));
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
   /* Professional Animations */
   @keyframes float {
     0%, 100% { transform: translateY(0px) translateX(0px); }
@@ -189,6 +215,28 @@ All colors MUST be HSL.
     50% { background-position: 100% 50%; }
   }
 
+  @keyframes hero-entrance {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scroll-fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .animate-float {
     animation: float 8s ease-in-out infinite;
   }
@@ -200,6 +248,25 @@ All colors MUST be HSL.
   .animate-gradient {
     background-size: 200% 200%;
     animation: gradient-shift 6s ease infinite;
+  }
+
+  .animate-hero-entrance {
+    animation: hero-entrance 1s ease-out;
+  }
+
+  .animate-scroll-fade-up {
+    animation: scroll-fade-up 0.8s ease-out;
+  }
+
+  .scroll-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /* Professional Utility Classes */
