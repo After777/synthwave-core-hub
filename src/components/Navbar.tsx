@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
+import { X } from "lucide-react";
 import logo from "@/assets/ravlabs-logo.png";
+import ThemeToggle from "./ThemeToggle";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +20,7 @@ const Navbar = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
+    setMobileMenuOpen(false);
   };
 
   const navLinks = [
@@ -68,6 +73,11 @@ const Navbar = () => {
             ))}
           </div>
 
+          {/* Theme Toggle */}
+          <div className="hidden md:block">
+            <ThemeToggle />
+          </div>
+
           {/* CTA Button */}
           <button
             onClick={() => scrollToSection("contact")}
@@ -77,25 +87,63 @@ const Navbar = () => {
             <span className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
           </button>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="md:hidden p-2 rounded-lg bg-primary/10 text-primary"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+          {/* Mobile Menu */}
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <button
+                  className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors border border-primary/30"
+                  aria-label="Open menu"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] glass-effect-strong border-l border-primary/20">
+                <div className="flex flex-col h-full">
+                  {/* Mobile Logo */}
+                  <div className="flex items-center justify-between mb-12 mt-4">
+                    <img src={logo} alt="Rav Labs" className="h-10 w-auto opacity-80" />
+                  </div>
+
+                  {/* Mobile Navigation Links */}
+                  <nav className="flex flex-col gap-6">
+                    {navLinks.map((link, index) => (
+                      <button
+                        key={link.id}
+                        onClick={() => scrollToSection(link.id)}
+                        className="text-left text-lg font-bold text-foreground/80 hover:text-primary transition-all duration-300 uppercase tracking-wider relative group py-2"
+                        style={{ animationDelay: `${index * 0.1}s` }}
+                      >
+                        <span className="relative z-10">{link.label}</span>
+                        <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
+                      </button>
+                    ))}
+                  </nav>
+
+                  {/* Mobile CTA */}
+                  <button
+                    onClick={() => scrollToSection("contact")}
+                    className="mt-auto mb-8 px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-bold text-sm shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.8)] transition-all duration-500 uppercase tracking-[0.2em]"
+                  >
+                    Get Started
+                  </button>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </nav>
