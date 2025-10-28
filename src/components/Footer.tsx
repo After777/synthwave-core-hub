@@ -56,7 +56,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-border/30 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} <span className="font-semibold text-foreground">Rav Labs</span>. All rights reserved. Crafted with excellence.
+            © {new Date().getFullYear()} <span className="font-semibold text-foreground">Rav Labs</span>. All rights reserved.
           </p>
         </div>
       </div>

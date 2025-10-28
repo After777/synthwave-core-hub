@@ -23,15 +23,8 @@ const About = () => {
             </div>
             
             <div className="space-y-4">
-              <p className="text-lg text-foreground/90 leading-relaxed">
-                <span className="font-semibold text-primary">Rav Labs</span> is your partner in digital transformation. 
-                We specialize in creating stunning, high-performance websites that drive real results.
-              </p>
-              
-              <p className="text-base text-muted-foreground leading-relaxed">
-                From small businesses to ambitious startups, we've helped dozens of clients establish 
-                their online presence with style, speed, and precision. Our streamlined process means 
-                you get professional results without the enterprise price tag.
+              <p className="text-xl text-foreground font-semibold leading-relaxed">
+                We are a new development Agency we make sure provide 100%
               </p>
             </div>
 
