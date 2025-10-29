@@ -181,7 +181,7 @@ const Navbar = () => {
               <span className="text-muted-foreground">— Rav Labs</span>
             </DialogTitle>
             <DialogDescription className="text-muted-foreground text-base">
-              By working with Rav Labs or using our services, you agree to the following terms and conditions.
+              By engaging with Rav Labs or using any of our services, you agree to the following Terms & Conditions.
             </DialogDescription>
           </DialogHeader>
           
@@ -191,9 +191,9 @@ const Navbar = () => {
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-primary">1. Monthly Payments</h3>
                 <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
-                  <li>Monthly payments must be completed within 7 days of the due date.</li>
-                  <li>If payment is delayed beyond 7 days, the client's website will be temporarily blocked until payment is cleared.</li>
-                  <li>Continuous delays may result in permanent suspension of hosting or maintenance services.</li>
+                  <li>All monthly payments must be completed within 7 days of the due date.</li>
+                  <li>If payment is delayed beyond this period, the client’s website or hosting may be temporarily suspended until payment is cleared.</li>
+                  <li>Repeated payment delays may result in permanent termination of hosting or maintenance services.</li>
                 </ul>
               </div>
 
@@ -201,9 +201,9 @@ const Navbar = () => {
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-primary">2. Limitation of Liability</h3>
                 <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
-                  <li>Rav Labs will not be held responsible for any indirect, incidental, or consequential damages caused by the use or inability to use the website or related services.</li>
-                  <li>We are not liable for third-party integrations, plugins, or external tools used within a project.</li>
-                  <li>While we may assist with certain third-party tools, responsibility for their performance remains with their respective providers.</li>
+                  <li>Rav Labs shall not be held responsible for any indirect, incidental, or consequential damages resulting from the use or inability to use a website or related service.</li>
+                  <li>We are not liable for issues caused by third-party integrations, plugins, domains, or external tools used in a project.</li>
+                  <li>While we may assist with such tools, their performance and reliability remain the responsibility of their respective providers.</li>
                 </ul>
               </div>
 
@@ -211,10 +211,10 @@ const Navbar = () => {
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-primary">3. Revisions & Delivery</h3>
                 <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
-                  <li>Each project includes a fixed number of revisions as discussed before the project begins.</li>
-                  <li>Additional revisions beyond that limit will incur extra fees.</li>
-                  <li>Once the final project is approved, Rav Labs is not responsible for further edits or modifications.</li>
-                  <li>Minor post-delivery adjustments may be allowed once or twice as a courtesy, but not beyond that.</li>
+                  <li>Each project includes a specific number of revisions, as mutually agreed upon before the project begins.</li>
+                  <li>Additional revisions beyond that limit will be billed separately.</li>
+                  <li>Once the final project is approved, Rav Labs is not responsible for future edits or modifications.</li>
+                  <li>We may offer minor post-delivery adjustments (once or twice) as a courtesy, but not beyond that.</li>
                 </ul>
               </div>
 
@@ -222,9 +222,9 @@ const Navbar = () => {
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-primary">4. Service Agreement</h3>
                 <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
-                  <li>All projects begin after an initial discussion, quotation, and client approval.</li>
-                  <li>Clients are responsible for providing accurate content, images, and project details.</li>
-                  <li>Any new features or design changes requested after approval will be charged separately.</li>
+                  <li>Projects begin only after initial discussions, quotations, and written client approval.</li>
+                  <li>Clients are responsible for providing accurate content, images, and required details in a timely manner.</li>
+                  <li>Any new feature requests, design modifications, or additional functionality after project approval will be charged separately.</li>
                 </ul>
               </div>
 
@@ -232,8 +232,8 @@ const Navbar = () => {
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-primary">5. Intellectual Property</h3>
                 <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
-                  <li>Upon full payment, ownership of the final website design, content, and assets is transferred to the client.</li>
-                  <li>Rav Labs retains the right to display completed work in its portfolio, social media, and promotional materials as a representation of our work.</li>
+                  <li>Full ownership of the website, design, and related assets will be transferred to the client upon complete payment.</li>
+                  <li>Rav Labs retains the right to display completed work in its portfolio, social media, and marketing materials as a representation of our expertise.</li>
                 </ul>
               </div>
 
@@ -241,10 +241,32 @@ const Navbar = () => {
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-primary">6. Confidentiality</h3>
                 <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
-                  <li>All client information, project files, and data shared with Rav Labs are treated as strictly confidential.</li>
-                  <li>We do not share, sell, or disclose any client data to third parties without explicit consent.</li>
+                  <li>All client data, project materials, and shared files are treated as strictly confidential.</li>
+                  <li>Rav Labs does not share, sell, or disclose any client information to third parties without explicit consent.</li>
                 </ul>
               </div>
+
+              {/* Section 7 */}
+              <div className="space-y-3">
+                  <h3 className="text-xl font-bold text-primary">7. Non-Payment & Project Termination</h3>
+                  <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
+                      <li>If a client fails to make payment after project completion or domain setup, Rav Labs reserves the right to delete or disable the website and domain without prior notice.</li>
+                      <li>Clients who made initial payments will be given a 7-day grace period to clear dues before termination.</li>
+                      <li>There is no refund policy once a project, service, or domain has been delivered or activated.</li>
+                  </ul>
+              </div>
+
+              {/* Section 8 */}
+              <div className="space-y-3">
+                  <h3 className="text-xl font-bold text-primary">8. Website Security & Responsibility</h3>
+                  <ul className="space-y-2 list-disc list-inside text-sm leading-relaxed">
+                      <li>Rav Labs is not responsible for any cyberattacks, DDoS incidents, hacking attempts, or data breaches after website delivery.</li>
+                      <li>We strongly recommend clients purchase our Security Protection Add-on (₹300) for enhanced safety.</li>
+                      <li>If clients choose not to purchase it, Rav Labs cannot be held accountable for any resulting security issues, data loss, or downtime.</li>
+                      <li>Refunds will not be issued under such circumstances (These T&C can change at any time) read Thourghly</li>
+                  </ul>
+              </div>
+              <p className="text-sm text-center text-muted-foreground">Thanks. - Rav Labs.</p>
             </div>
           </ScrollArea>
         </DialogContent>
