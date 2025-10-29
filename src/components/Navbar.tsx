@@ -82,16 +82,18 @@ const Navbar = () => {
             
             {/* Terms & Conditions Button */}
             <button
+              type="button"
               onClick={() => setTermsOpen(true)}
-              className="px-6 py-2.5 rounded-2xl bg-black text-white font-bold text-xs shadow-[0_0_20px_hsl(var(--primary)/0.6)] hover:shadow-[0_0_35px_hsl(var(--primary)/0.9)] transition-all duration-500 uppercase tracking-[0.15em] border-2 border-primary/40 hover:border-primary/60 hover:scale-105"
+              className="px-6 py-2.5 rounded-3xl bg-card/50 text-foreground font-bold text-xs shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.7)] transition-all duration-500 uppercase tracking-[0.15em] border-2 border-primary/40 hover:border-primary/70 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
             >
               Terms & Conditions
             </button>
 
             {/* CTA Button */}
             <button
+              type="button"
               onClick={() => scrollToSection("contact")}
-              className="px-8 py-3 rounded-2xl bg-gradient-to-r from-primary via-accent to-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white font-bold text-sm shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.8)] hover:scale-105 transition-all duration-500 uppercase tracking-[0.2em] border-2 border-primary/30 relative overflow-hidden group"
+              className="px-8 py-3 rounded-3xl bg-gradient-to-r from-primary via-accent to-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white font-bold text-sm shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.8)] hover:scale-105 transition-all duration-500 uppercase tracking-[0.2em] border-2 border-primary/30 relative overflow-hidden group"
             >
               <span className="relative z-10">Get Started</span>
               <span className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
@@ -122,7 +124,7 @@ const Navbar = () => {
                   </svg>
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] glass-effect-strong border-l border-primary/20">
+              <SheetContent side="right" className="w-[300px] glass-effect-strong border-l-2 border-primary/20 rounded-l-3xl overflow-hidden">
                 <div className="flex flex-col h-full">
                   {/* Mobile Logo */}
                   <div className="flex items-center justify-between mb-12 mt-4">
@@ -146,19 +148,21 @@ const Navbar = () => {
 
                   {/* Terms & Conditions Button */}
                   <button
+                    type="button"
                     onClick={() => {
                       setTermsOpen(true);
                       setMobileMenuOpen(false);
                     }}
-                    className="mt-8 px-6 py-3 rounded-2xl bg-black text-white font-bold text-sm shadow-[0_0_20px_hsl(var(--primary)/0.6)] hover:shadow-[0_0_35px_hsl(var(--primary)/0.9)] transition-all duration-500 uppercase tracking-[0.15em] border-2 border-primary/40"
+                    className="mt-8 px-6 py-3 rounded-3xl bg-card/50 text-foreground font-bold text-sm shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.7)] transition-all duration-500 uppercase tracking-[0.15em] border-2 border-primary/40 hover:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/50"
                   >
                     Important – Terms & Conditions
                   </button>
 
                   {/* Mobile CTA */}
                   <button
+                    type="button"
                     onClick={() => scrollToSection("contact")}
-                    className="mt-auto mb-8 px-8 py-4 rounded-2xl bg-gradient-to-r from-primary to-accent text-white font-bold text-sm shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.8)] transition-all duration-500 uppercase tracking-[0.2em] border-2 border-primary/20"
+                    className="mt-auto mb-8 px-8 py-4 rounded-3xl bg-gradient-to-r from-primary to-accent text-white font-bold text-sm shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.8)] transition-all duration-500 uppercase tracking-[0.2em] border-2 border-primary/20"
                   >
                     Get Started
                   </button>
@@ -171,19 +175,19 @@ const Navbar = () => {
 
       {/* Terms & Conditions Dialog */}
       <Dialog open={termsOpen} onOpenChange={setTermsOpen}>
-        <DialogContent className="max-w-3xl max-h-[85vh] bg-black border-2 border-primary/40 shadow-[0_0_50px_hsl(var(--primary)/0.5)] rounded-3xl">
+        <DialogContent className="max-w-3xl max-h-[85vh] bg-card border-2 border-primary/40 shadow-[0_0_50px_hsl(var(--primary)/0.5)] rounded-3xl overflow-hidden">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+            <DialogTitle className="text-2xl font-bold mb-4 flex items-center gap-2">
               <span className="text-primary">Terms & Conditions</span>
-              <span className="text-white/60">— Rav Labs</span>
+              <span className="text-muted-foreground">— Rav Labs</span>
             </DialogTitle>
-            <DialogDescription className="text-white/80 text-base">
+            <DialogDescription className="text-muted-foreground text-base">
               By working with Rav Labs or using our services, you agree to the following terms and conditions.
             </DialogDescription>
           </DialogHeader>
           
           <ScrollArea className="h-[60vh] pr-4">
-            <div className="space-y-8 text-white/90">
+            <div className="space-y-8 text-foreground/90">
               {/* Section 1 */}
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-primary">1. Monthly Payments</h3>
