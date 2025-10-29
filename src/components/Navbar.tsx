@@ -80,15 +80,6 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
             
-            {/* Terms & Conditions Button */}
-            <button
-              type="button"
-              onClick={() => setTermsOpen(true)}
-              className="px-6 py-2.5 rounded-3xl bg-card/50 text-foreground font-bold text-xs shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.7)] transition-all duration-500 uppercase tracking-[0.15em] border-2 border-primary/40 hover:border-primary/70 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
-            >
-              Terms & Conditions
-            </button>
-
             {/* CTA Button */}
             <button
               type="button"
