@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
-import logo from "@/assets/ravlabs-logo.png";
+// import logo from "@/assets/ravlabs-logo.png";
 import ThemeToggle from "./ThemeToggle";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -48,14 +48,14 @@ const Navbar = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-3 group"
           >
-            <img
+            {/* <img
               src={logo}
               alt="Rav Labs"
               className="h-10 w-auto transition-all duration-500 group-hover:scale-105 opacity-70 group-hover:opacity-100 brightness-90 group-hover:brightness-110 saturate-90 group-hover:saturate-100"
               style={{
                 filter: 'drop-shadow(0 0 4px rgba(59, 130, 246, 0.2))',
               }}
-            />
+            /> */}
           </button>
 
           {/* Navigation Links */}
@@ -128,7 +128,7 @@ const Navbar = () => {
                 <div className="flex flex-col h-full">
                   {/* Mobile Logo */}
                   <div className="flex items-center justify-between mb-12 mt-4">
-                    <img src={logo} alt="Rav Labs" className="h-10 w-auto opacity-80" />
+                    {/* <img src={logo} alt="Rav Labs" className="h-10 w-auto opacity-80" /> */}
                   </div>
 
                   {/* Mobile Navigation Links */}
