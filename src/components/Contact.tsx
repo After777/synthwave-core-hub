@@ -119,7 +119,7 @@ const Contact = () => {
                       Email Us
                     </a>
                     <a 
-                      href="tel:+919030440487"
+                      href="tel:+917396432909"
                       className="px-6 py-3 rounded-xl border-2 border-primary/50 bg-card/50 text-foreground font-semibold text-sm hover:border-primary hover:bg-primary/10 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)] transition-all duration-300"
                     >
                       Call Now
