@@ -144,18 +144,19 @@ const Navbar = () => {
                         <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
                       </button>
                     ))}
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setTermsOpen(true);
-                        setMobileMenuOpen(false);
-                      }}
-                      className="text-left text-lg font-bold text-foreground/80 hover:text-primary transition-all duration-300 uppercase tracking-wider relative group py-2"
-                    >
-                      <span className="relative z-10">Terms & Conditions</span>
-                      <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
-                    </button>
                   </nav>
+
+                  {/* Terms & Conditions Button */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setTermsOpen(true);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="mt-8 px-6 py-3 rounded-3xl bg-card/50 text-foreground font-bold text-sm shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.7)] transition-all duration-500 uppercase tracking-[0.15em] border-2 border-primary/40 hover:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  >
+                    Important – Terms & Conditions
+                  </button>
 
                   {/* Mobile CTA */}
                   <button
