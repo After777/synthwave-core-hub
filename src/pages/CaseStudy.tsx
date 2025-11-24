@@ -1,238 +1,54 @@
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
-import { ArrowRight, Calendar, Check } from "lucide-react";
+import { ArrowRight, Calendar, Check, Users, Activity } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import aramanaDesktop from "@/assets/aramana-desktop.jpg";
+import aramanaMobile from "@/assets/aramana-mobile.jpg";
+import aramanaServices from "@/assets/aramana-services.jpg";
 
 const caseStudies = {
-  "fitness-empire": {
-    title: "Fitness Empire Gym",
-    timeline: "14 days from concept to launch",
+  "aramana-hospital": {
+    title: "Aramana Hospital & Heart Centre",
+    timeline: "21 days from concept to launch",
     hero: {
-      subtitle: "Modern fitness platform transforming gym management",
-      description: "Built a comprehensive digital ecosystem for India's fastest-growing gym chain, including online booking, trainer profiles, class schedules, and automated membership management."
+      subtitle: "Modernizing Healthcare Access in Kerala",
+      description: "Built a comprehensive healthcare platform for Aramana Hospital with intuitive doctor profiles, online appointment booking, multi-specialty services showcase, and seamless mobile experience serving patients across Kasaragod, Kerala."
     },
     challenge: {
       title: "The Challenge",
-      content: "Fitness Empire was struggling with manual booking processes, leading to double-bookings, missed appointments, and frustrated members. They needed a modern digital platform to streamline operations and enhance member experience while maintaining their premium brand image."
+      content: "Aramana Hospital needed a modern digital presence to serve their growing patient base across Kerala. Their existing website lacked online appointment booking, comprehensive doctor profiles, and mobile accessibility - crucial for serving patients in rural and semi-urban areas. Manual appointment booking was causing long wait times, and patients had no way to view specialist schedules or emergency services online."
     },
     solution: {
       title: "Our Solution",
       points: [
-        "Real-time booking system with automated confirmations",
-        "Mobile-first responsive design for on-the-go access",
-        "Integrated payment gateway with recurring billing",
-        "Trainer profiles with availability calendars",
-        "Class schedule management with capacity tracking",
-        "Member dashboard with workout history and progress tracking"
+        "Interactive doctor profiles with specializations (Gynecology, Cardiology, Dental, etc.)",
+        "Online appointment booking system with real-time availability",
+        "Multi-specialty services showcase (Cardiac Care, Diagnostics, General Services)",
+        "Mobile-first responsive design for rural accessibility",
+        "24/7 emergency contact integration (04994 230524, 9207 230524)",
+        "Medical services cards with detailed department information",
+        "Clean, accessible UI for all age groups and digital literacy levels"
       ]
     },
     results: {
       title: "Results That Matter",
       metrics: [
-        { label: "Member Inquiries", value: "+180%", description: "Increase in monthly sign-ups" },
-        { label: "Operational Efficiency", value: "67%", description: "Reduction in admin time" },
-        { label: "Lighthouse Score", value: "98/100", description: "Performance excellence" },
-        { label: "Launch Timeline", value: "14 days", description: "From concept to production" }
+        { label: "Launch Timeline", value: "21 Days", description: "From concept to production" },
+        { label: "Online Appointments", value: "+160%", description: "Increase in bookings" },
+        { label: "Doctors Onboarded", value: "50+", description: "Specialist profiles" },
+        { label: "Mobile Traffic", value: "72%", description: "Patient accessibility" }
       ]
     },
-    techStack: ["React", "Next.js", "Tailwind CSS", "Stripe", "Node.js", "PostgreSQL"],
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Responsive Design", "SEO Optimization", "Performance Optimization"],
     images: {
-      hero: "/api/placeholder/1200/800",
-      before: "/api/placeholder/600/400",
-      after: "/api/placeholder/600/400"
-    }
-  },
-  "spice-junction": {
-    title: "Spice Junction Restaurant",
-    timeline: "21 days including full e-commerce setup",
-    hero: {
-      subtitle: "Restaurant e-commerce with real-time order management",
-      description: "Complete digital transformation for a popular Indian restaurant chain, featuring online ordering, table reservations, menu management, and kitchen display system integration."
+      hero: aramanaDesktop,
+      before: aramanaServices,
+      after: aramanaMobile
     },
-    challenge: {
-      title: "The Challenge",
-      content: "Spice Junction was losing customers to competitors with online ordering. They needed a fast, beautiful e-commerce platform that could handle high-traffic periods, integrate with their kitchen operations, and maintain their authentic brand experience online."
-    },
-    solution: {
-      title: "Our Solution",
-      points: [
-        "Shopify-powered e-commerce with custom theme",
-        "Real-time kitchen management dashboard",
-        "Table reservation system with waitlist management",
-        "Interactive menu with dietary filters and customization",
-        "Order tracking with SMS notifications",
-        "Integrated loyalty program and promotional tools"
-      ]
-    },
-    results: {
-      title: "Results That Matter",
-      metrics: [
-        { label: "Online Orders", value: "3x", description: "Triple the orders in 3 months" },
-        { label: "Checkout Speed", value: "35%", description: "Faster completion time" },
-        { label: "Uptime", value: "99.9%", description: "Reliable during peak hours" },
-        { label: "Customer Rating", value: "4.8/5", description: "Platform user satisfaction" }
-      ]
-    },
-    techStack: ["Next.js", "Shopify", "Framer Motion", "Node.js", "WebSocket", "Twilio"],
-    images: {
-      hero: "/api/placeholder/1200/800",
-      before: "/api/placeholder/600/400",
-      after: "/api/placeholder/600/400"
-    }
-  },
-  "prime-realty": {
-    title: "Prime Realty Platform",
-    timeline: "28 days for full marketplace launch",
-    hero: {
-      subtitle: "Next-generation real estate marketplace",
-      description: "Built a comprehensive property marketplace with virtual tours, advanced search, agent CRM, and lead management for one of Mumbai's leading real estate agencies."
-    },
-    challenge: {
-      title: "The Challenge",
-      content: "Prime Realty needed to modernize their property listings platform to compete with large aggregators. They required advanced search capabilities, virtual tour integration, and a robust CRM system for their agents while maintaining fast load times with hundreds of property listings."
-    },
-    solution: {
-      title: "Our Solution",
-      points: [
-        "Advanced search with 20+ filters and map integration",
-        "Virtual tour integration with 360° viewing",
-        "Agent CRM with lead tracking and follow-up automation",
-        "Mobile-optimized property cards with lazy loading",
-        "Comparison tool for side-by-side property analysis",
-        "Automated property alerts and saved searches"
-      ]
-    },
-    results: {
-      title: "Results That Matter",
-      metrics: [
-        { label: "Properties Listed", value: "500+", description: "Active listings managed" },
-        { label: "Lead Generation", value: "+220%", description: "Increase in qualified leads" },
-        { label: "Page Load Time", value: "1.2s", description: "Lightning-fast performance" },
-        { label: "Mobile Users", value: "72%", description: "Mobile-first success" }
-      ]
-    },
-    techStack: ["React", "TypeScript", "PostgreSQL", "Google Maps API", "Redis", "AWS"],
-    images: {
-      hero: "/api/placeholder/1200/800",
-      before: "/api/placeholder/600/400",
-      after: "/api/placeholder/600/400"
-    }
-  },
-  "corporate-consulting": {
-    title: "Apex Corporate Consulting",
-    timeline: "18 days for complete website",
-    hero: {
-      subtitle: "Professional corporate presence that converts",
-      description: "Designed and developed a premium corporate website for a management consulting firm, featuring service portfolios, case studies, team profiles, and integrated scheduling system."
-    },
-    challenge: {
-      title: "The Challenge",
-      content: "Apex Corporate needed to establish credibility with international clients while showcasing their expertise. Their old website was outdated and failed to convey their premium positioning or generate quality leads from high-value clients."
-    },
-    solution: {
-      title: "Our Solution",
-      points: [
-        "Premium design with subtle animations and micro-interactions",
-        "Detailed service pages with case study integration",
-        "Team profiles with expertise highlighting",
-        "Integrated Calendly for consultation bookings",
-        "Resource center with downloadable insights",
-        "Multi-language support for international reach"
-      ]
-    },
-    results: {
-      title: "Results That Matter",
-      metrics: [
-        { label: "Conversion Rate", value: "42%", description: "Contact form submissions" },
-        { label: "International Clients", value: "+156%", description: "Overseas inquiries" },
-        { label: "Time on Site", value: "4.5 min", description: "Average session duration" },
-        { label: "Brand Perception", value: "Premium", description: "Elevated market position" }
-      ]
-    },
-    techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "Contentful CMS", "Calendly API"],
-    images: {
-      hero: "/api/placeholder/1200/800",
-      before: "/api/placeholder/600/400",
-      after: "/api/placeholder/600/400"
-    }
-  },
-  "heritage-jewels": {
-    title: "Heritage Jewels 3D Store",
-    timeline: "35 days including 3D integration",
-    hero: {
-      subtitle: "Luxury jewelry shopping with immersive 3D experience",
-      description: "Created a cutting-edge e-commerce platform for high-end jewelry with interactive 3D product viewer, AR try-on capabilities, and secure payment integration for Heritage Jewels."
-    },
-    challenge: {
-      title: "The Challenge",
-      content: "Heritage Jewels wanted to sell luxury jewelry online but faced the challenge of showcasing intricate details and building trust for high-value purchases. They needed an immersive digital experience that could replicate the in-store premium feel and allow customers to examine pieces from every angle."
-    },
-    solution: {
-      title: "Our Solution",
-      points: [
-        "Interactive 3D viewer with 360° rotation and zoom",
-        "AR try-on feature for rings, necklaces, and earrings",
-        "High-resolution image galleries with macro detail shots",
-        "Secure checkout with multiple payment options",
-        "Virtual consultation booking with jewelry experts",
-        "Wishlist and gift registry functionality"
-      ]
-    },
-    results: {
-      title: "Results That Matter",
-      metrics: [
-        { label: "User Engagement", value: "+300%", description: "Time spent viewing products" },
-        { label: "3D Interactions", value: "87%", description: "Users engaging with 3D viewer" },
-        { label: "Cart Value", value: "+145%", description: "Average order increase" },
-        { label: "Trust Score", value: "4.9/5", description: "Customer confidence rating" }
-      ]
-    },
-    techStack: ["React", "Three.js", "Shopify", "AR SDK", "WebGL", "Stripe"],
-    images: {
-      hero: "/api/placeholder/1200/800",
-      before: "/api/placeholder/600/400",
-      after: "/api/placeholder/600/400"
-    }
-  },
-  "logistics-dashboard": {
-    title: "FleetTrack Logistics SaaS",
-    timeline: "42 days for MVP dashboard",
-    hero: {
-      subtitle: "Real-time fleet management and route optimization",
-      description: "Developed a comprehensive SaaS dashboard for logistics companies, featuring real-time GPS tracking, route optimization, driver management, and automated reporting capabilities."
-    },
-    challenge: {
-      title: "The Challenge",
-      content: "FleetTrack's clients needed a modern solution to manage multiple vehicles, optimize routes, and reduce operational costs. The system had to handle real-time data from hundreds of vehicles, provide instant insights, and work seamlessly across devices for fleet managers on the go."
-    },
-    solution: {
-      title: "Our Solution",
-      points: [
-        "Real-time GPS tracking with live map visualization",
-        "AI-powered route optimization for fuel efficiency",
-        "Driver performance monitoring and scoring",
-        "Automated delivery confirmations with photo evidence",
-        "Multi-tenant architecture for different client accounts",
-        "Custom reporting with export capabilities"
-      ]
-    },
-    results: {
-      title: "Results That Matter",
-      metrics: [
-        { label: "Efficiency Boost", value: "40%", description: "Operational cost reduction" },
-        { label: "Real-time Updates", value: "<2s", description: "Data refresh latency" },
-        { label: "Client Adoption", value: "95%", description: "Driver app usage rate" },
-        { label: "Scalability", value: "Multi-tenant", description: "100+ client companies" }
-      ]
-    },
-    techStack: ["React", "TypeScript", "WebSocket", "Node.js", "MongoDB", "Redis"],
-    images: {
-      hero: "/api/placeholder/1200/800",
-      before: "/api/placeholder/600/400",
-      after: "/api/placeholder/600/400"
-    }
+    location: "NH 66, Ashwini Nagar, Kasaragod, Kerala 671121",
+    website: "https://aramanahospital.com"
   }
 };
 
@@ -279,9 +95,17 @@ const CaseStudy = () => {
         <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-6xl">
             <div className="space-y-6 animate-hero-entrance">
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Calendar className="w-4 h-4" />
-                <span>{study.timeline}</span>
+              <div className="flex items-center gap-3 text-sm text-muted-foreground flex-wrap">
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4" />
+                  <span>{study.timeline}</span>
+                </div>
+                {study.location && (
+                  <>
+                    <span>•</span>
+                    <span>{study.location}</span>
+                  </>
+                )}
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-primary glow-text">
                 {study.title}
@@ -292,6 +116,17 @@ const CaseStudy = () => {
               <p className="text-lg text-muted-foreground max-w-3xl">
                 {study.hero.description}
               </p>
+              {study.website && (
+                <a 
+                  href={study.website} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium"
+                >
+                  Visit Live Website
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              )}
             </div>
           </div>
         </section>
