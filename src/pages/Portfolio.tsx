@@ -3,55 +3,18 @@ import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import aramanaDesktop from "@/assets/aramana-desktop.jpg";
+import aramanaMobile from "@/assets/aramana-mobile.jpg";
 
 const projects = [
   {
-    id: "fitness-empire",
-    title: "Fitness Empire Gym",
-    description: "Modern fitness platform with online booking, trainer profiles, and membership management for India's fastest-growing gym chain.",
-    image: "/api/placeholder/800/600",
-    tags: ["React", "Next.js", "Tailwind", "Stripe"],
-    results: ["Launched in 14 days", "+180% member inquiries", "98 Lighthouse score"],
-  },
-  {
-    id: "spice-junction",
-    title: "Spice Junction Restaurant",
-    description: "Full-featured e-commerce platform with online ordering, table reservations, and real-time kitchen management system.",
-    image: "/api/placeholder/800/600",
-    tags: ["Next.js", "Shopify", "Framer Motion", "Node.js"],
-    results: ["3x online orders", "35% faster checkout", "99.9% uptime"],
-  },
-  {
-    id: "prime-realty",
-    title: "Prime Realty Platform",
-    description: "Comprehensive real estate marketplace with virtual tours, advanced search filters, and agent CRM integration.",
-    image: "/api/placeholder/800/600",
-    tags: ["React", "TypeScript", "PostgreSQL", "Maps API"],
-    results: ["500+ properties listed", "+220% lead generation", "Mobile-first design"],
-  },
-  {
-    id: "corporate-consulting",
-    title: "Apex Corporate Consulting",
-    description: "Professional corporate website with service showcase, case studies, team profiles, and integrated booking system.",
-    image: "/api/placeholder/800/600",
-    tags: ["Next.js", "Tailwind", "Framer Motion", "CMS"],
-    results: ["Premium design", "42% conversion rate", "International clients"],
-  },
-  {
-    id: "heritage-jewels",
-    title: "Heritage Jewels 3D Store",
-    description: "Luxury jewelry e-commerce with interactive 3D product viewer, AR try-on, and secure payment gateway integration.",
-    image: "/api/placeholder/800/600",
-    tags: ["React", "Three.js", "Shopify", "AR SDK"],
-    results: ["+300% engagement", "3D product viewer", "Secure payments"],
-  },
-  {
-    id: "logistics-dashboard",
-    title: "FleetTrack Logistics SaaS",
-    description: "Real-time logistics management dashboard with GPS tracking, route optimization, and automated reporting for fleet operations.",
-    image: "/api/placeholder/800/600",
-    tags: ["React", "TypeScript", "WebSocket", "Dashboard"],
-    results: ["Real-time tracking", "40% efficiency boost", "Multi-tenant"],
+    id: "aramana-hospital",
+    title: "Aramana Hospital & Heart Centre",
+    description: "Comprehensive healthcare platform with doctor profiles, appointment booking, multi-specialty services showcase, and 24/7 emergency care integration.",
+    desktopImage: aramanaDesktop,
+    mobileImage: aramanaMobile,
+    tags: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
+    results: ["50+ doctors onboarded", "+160% online appointments", "24/7 patient access"],
   },
 ];
 
@@ -59,14 +22,14 @@ const Portfolio = () => {
   return (
     <>
       <Helmet>
-        <title>Portfolio - Rav Labs | Case Studies & Projects</title>
-        <meta name="description" content="Explore Rav Labs' portfolio of high-converting websites, e-commerce platforms, and SaaS dashboards built for Indian businesses. View our case studies and results." />
+        <title>Portfolio - Rav Labs | Healthcare Platform Case Study</title>
+        <meta name="description" content="Explore Rav Labs' work on Aramana Hospital & Heart Centre - a comprehensive healthcare platform with doctor profiles, appointment booking, and multi-specialty services serving patients across Kerala." />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CreativeWork",
             "name": "Rav Labs Portfolio",
-            "description": "Portfolio showcasing web development projects and case studies",
+            "description": "Healthcare platform development case study for Aramana Hospital",
             "creator": {
               "@type": "Organization",
               "name": "Rav Labs"
@@ -101,7 +64,7 @@ const Portfolio = () => {
                 Our Portfolio
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Real projects. Real results. Explore how we've helped Indian businesses launch stunning digital experiences that convert.
+                Explore our featured healthcare platform project - a comprehensive digital solution built for Aramana Hospital & Heart Centre, serving patients across Kerala.
               </p>
             </div>
           </div>
@@ -110,30 +73,45 @@ const Portfolio = () => {
         {/* Projects Grid */}
         <section className="pb-24 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {projects.map((project, index) => (
                 <article
                   key={project.id}
-                  className="glass-effect rounded-xl overflow-hidden hover-lift group"
+                  className="glass-effect rounded-xl overflow-hidden hover-lift group lg:col-span-2"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {/* Project Image */}
-                  <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+                  {/* Project Images - Side by Side */}
+                  <div className="grid md:grid-cols-2 gap-4 p-6 bg-muted/30">
+                    <div className="relative aspect-video overflow-hidden rounded-lg bg-muted">
+                      <img
+                        src={project.desktopImage}
+                        alt={`${project.title} desktop view`}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute bottom-2 left-2 px-2 py-1 bg-background/80 rounded text-xs font-medium">
+                        Desktop
+                      </div>
+                    </div>
+                    <div className="relative aspect-video overflow-hidden rounded-lg bg-muted flex items-center justify-center">
+                      <img
+                        src={project.mobileImage}
+                        alt={`${project.title} mobile view`}
+                        loading="lazy"
+                        className="h-full w-auto object-contain group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute bottom-2 left-2 px-2 py-1 bg-background/80 rounded text-xs font-medium">
+                        Mobile
+                      </div>
+                    </div>
                   </div>
 
                   {/* Project Content */}
                   <div className="p-6 space-y-4">
-                    <h2 className="text-2xl font-bold text-primary group-hover:text-accent transition-colors duration-300">
+                    <h2 className="text-3xl font-bold text-primary group-hover:text-accent transition-colors duration-300 glow-text">
                       {project.title}
                     </h2>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                       {project.description}
                     </p>
 
@@ -150,11 +128,10 @@ const Portfolio = () => {
                     </div>
 
                     {/* Results */}
-                    <div className="space-y-2 pt-2">
+                    <div className="grid grid-cols-3 gap-4 pt-4">
                       {project.results.map((result, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-xs text-foreground/70">
-                          <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
-                          <span>{result}</span>
+                        <div key={idx} className="text-center p-3 rounded-lg bg-accent/10 border border-accent/20">
+                          <div className="text-xs text-foreground/70">{result}</div>
                         </div>
                       ))}
                     </div>
@@ -162,11 +139,12 @@ const Portfolio = () => {
                     {/* CTA Button */}
                     <Button
                       variant="hero"
-                      className="w-full group/btn"
+                      size="lg"
+                      className="w-full group/btn mt-4"
                       onClick={() => window.location.href = `/portfolio/${project.id}`}
                     >
-                      <span>View Case Study</span>
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <span>View Full Case Study</span>
+                      <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                     </Button>
                   </div>
                 </article>
@@ -179,10 +157,10 @@ const Portfolio = () => {
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-primary/5">
           <div className="container mx-auto max-w-4xl text-center space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold text-primary glow-text">
-              Ready to Build Your Success Story?
+              Ready to Transform Your Digital Presence?
             </h2>
             <p className="text-xl text-muted-foreground">
-              Let's create a stunning digital experience that drives real results for your business.
+              Whether you're in healthcare, e-commerce, or any industry - let's create a stunning digital experience that drives real results for your business.
             </p>
             <Button
               variant="hero"
