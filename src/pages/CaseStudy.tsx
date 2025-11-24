@@ -4,9 +4,7 @@ import { ArrowRight, Calendar, Check, Users, Activity } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import aramanaDesktop from "@/assets/aramana-desktop.jpg";
-import aramanaMobile from "@/assets/aramana-mobile.jpg";
-import aramanaServices from "@/assets/aramana-services.jpg";
+import aramanaFullPage from "@/assets/aramana-full-page.jpg";
 
 const caseStudies = {
   "aramana-hospital": {
@@ -43,9 +41,9 @@ const caseStudies = {
     },
     techStack: ["React", "TypeScript", "Tailwind CSS", "Responsive Design", "SEO Optimization", "Performance Optimization"],
     images: {
-      hero: aramanaDesktop,
-      before: aramanaServices,
-      after: aramanaMobile
+      hero: aramanaFullPage,
+      before: aramanaFullPage,
+      after: aramanaFullPage
     },
     location: "NH 66, Ashwini Nagar, Kasaragod, Kerala 671121",
     website: "https://aramanahospital.com"

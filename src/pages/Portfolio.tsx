@@ -3,16 +3,14 @@ import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import aramanaDesktop from "@/assets/aramana-desktop.jpg";
-import aramanaMobile from "@/assets/aramana-mobile.jpg";
+import aramanaFullPage from "@/assets/aramana-full-page.jpg";
 
 const projects = [
   {
     id: "aramana-hospital",
     title: "Aramana Hospital & Heart Centre",
     description: "Comprehensive healthcare platform with doctor profiles, appointment booking, multi-specialty services showcase, and 24/7 emergency care integration.",
-    desktopImage: aramanaDesktop,
-    mobileImage: aramanaMobile,
+    fullPageImage: aramanaFullPage,
     tags: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
     results: ["50+ doctors onboarded", "+160% online appointments", "24/7 patient access"],
   },
@@ -80,29 +78,15 @@ const Portfolio = () => {
                   className="glass-effect rounded-xl overflow-hidden hover-lift group lg:col-span-2"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {/* Project Images - Side by Side */}
-                  <div className="grid md:grid-cols-2 gap-4 p-6 bg-muted/30">
-                    <div className="relative aspect-video overflow-hidden rounded-lg bg-muted">
+                  {/* Project Image - Full Page */}
+                  <div className="p-6 bg-muted/30">
+                    <div className="relative aspect-[9/16] md:aspect-video overflow-hidden rounded-lg bg-muted">
                       <img
-                        src={project.desktopImage}
-                        alt={`${project.title} desktop view`}
+                        src={project.fullPageImage}
+                        alt={`${project.title} full page view`}
                         loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute bottom-2 left-2 px-2 py-1 bg-background/80 rounded text-xs font-medium">
-                        Desktop
-                      </div>
-                    </div>
-                    <div className="relative aspect-video overflow-hidden rounded-lg bg-muted flex items-center justify-center">
-                      <img
-                        src={project.mobileImage}
-                        alt={`${project.title} mobile view`}
-                        loading="lazy"
-                        className="h-full w-auto object-contain group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute bottom-2 left-2 px-2 py-1 bg-background/80 rounded text-xs font-medium">
-                        Mobile
-                      </div>
                     </div>
                   </div>
 
