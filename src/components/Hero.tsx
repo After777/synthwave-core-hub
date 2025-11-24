@@ -55,15 +55,25 @@ const Hero = () => {
             <span className="text-foreground font-medium"> From concept to launch in weeks, not months.</span>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button 
-              variant="hero" 
-              size="lg"
-              onClick={() => scrollToSection('contact')}
-              className="w-full sm:w-auto text-base font-semibold hover-lift"
-            >
-              Start Your Project
-            </Button>
+          <div className="flex flex-col gap-4 justify-center items-center mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
+              <Button 
+                variant="hero" 
+                size="lg"
+                onClick={() => scrollToSection('contact')}
+                className="w-full sm:w-auto text-base font-semibold hover-lift"
+              >
+                Start Your Project
+              </Button>
+              <Button 
+                variant="neon" 
+                size="lg"
+                onClick={() => scrollToSection('services')}
+                className="w-full sm:w-auto text-base font-semibold"
+              >
+                Explore Services
+              </Button>
+            </div>
             <Button 
               variant="neon" 
               size="lg"
@@ -71,14 +81,6 @@ const Hero = () => {
               className="w-full sm:w-auto text-base font-semibold"
             >
               Portfolio
-            </Button>
-            <Button 
-              variant="neon" 
-              size="lg"
-              onClick={() => scrollToSection('services')}
-              className="w-full sm:w-auto text-base font-semibold"
-            >
-              Explore Services
             </Button>
           </div>
 
