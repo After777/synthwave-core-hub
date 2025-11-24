@@ -20,15 +20,21 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string, isRoute?: boolean) => {
+    if (isRoute) {
+      window.location.href = `/${id}`;
+      setMobileMenuOpen(false);
+      return;
+    }
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
     setMobileMenuOpen(false);
   };
 
-  const navLinks = [
+  const navLinks: Array<{ label: string; id: string; isRoute?: boolean }> = [
     { label: "About", id: "about" },
     { label: "Services", id: "services" },
+    { label: "Portfolio", id: "portfolio", isRoute: true },
     { label: "FAQ", id: "faq" },
     { label: "Contact", id: "contact" },
   ];
@@ -63,7 +69,7 @@ const Navbar = () => {
             {navLinks.map((link, index) => (
               <button
                 key={link.id}
-                onClick={() => scrollToSection(link.id)}
+                onClick={() => scrollToSection(link.id, link.isRoute)}
                 className="relative text-sm font-bold text-foreground/70 hover:text-primary transition-all duration-500 group uppercase tracking-[0.15em] futuristic-nav-link"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -136,7 +142,7 @@ const Navbar = () => {
                     {navLinks.map((link, index) => (
                       <button
                         key={link.id}
-                        onClick={() => scrollToSection(link.id)}
+                        onClick={() => scrollToSection(link.id, link.isRoute)}
                         className="text-left text-lg font-bold text-foreground/80 hover:text-primary transition-all duration-300 uppercase tracking-wider relative group py-2"
                         style={{ animationDelay: `${index * 0.1}s` }}
                       >
