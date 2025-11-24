@@ -67,6 +67,14 @@ const Hero = () => {
             <Button 
               variant="neon" 
               size="lg"
+              onClick={() => window.location.href = '/portfolio'}
+              className="w-full sm:w-auto text-base font-semibold"
+            >
+              Portfolio
+            </Button>
+            <Button 
+              variant="neon" 
+              size="lg"
               onClick={() => scrollToSection('services')}
               className="w-full sm:w-auto text-base font-semibold"
             >
