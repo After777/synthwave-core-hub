@@ -181,37 +181,8 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        {/* Results Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-primary/5">
-          <div className="container mx-auto max-w-6xl">
-            <div className="space-y-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center">
-                {study.results.title}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {study.results.metrics.map((metric, idx) => (
-                  <div
-                    key={idx}
-                    className="glass-effect-strong rounded-xl p-6 text-center space-y-3 hover-glow"
-                  >
-                    <div className="text-4xl font-bold text-primary glow-text">
-                      {metric.value}
-                    </div>
-                    <div className="font-semibold text-foreground">
-                      {metric.label}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      {metric.description}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Tech Stack */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-primary/5">
           <div className="container mx-auto max-w-6xl">
             <div className="space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold text-primary text-center">
