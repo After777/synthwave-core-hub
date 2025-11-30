@@ -34,6 +34,7 @@ const Navbar = () => {
   const navLinks: Array<{ label: string; id: string; isRoute?: boolean }> = [
     { label: "About", id: "about" },
     { label: "Services", id: "services" },
+    { label: "Portfolio", id: "portfolio", isRoute: true },
     { label: "FAQ", id: "faq" },
     { label: "Contact", id: "contact" },
   ];

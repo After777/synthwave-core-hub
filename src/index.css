@@ -349,4 +349,8 @@ All colors MUST be HSL.
   .text-balance {
     text-wrap: balance;
   }
+
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
 }
