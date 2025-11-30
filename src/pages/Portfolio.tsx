@@ -58,7 +58,7 @@ const Portfolio = () => {
         <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
             <div className="text-center space-y-6 animate-hero-entrance">
-              <h1 className="heading-primary text-primary glow-text">
+              <h1 className="heading-primary text-primary glow-text font-poppins">
                 Our Portfolio
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
